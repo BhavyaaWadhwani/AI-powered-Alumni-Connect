@@ -1,0 +1,23 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "title": "users collection",
+    "required": ["name", "email", "passwordHash", "role"],
+    "properties": {
+      "_id": { "bsonType": "objectId" },
+      "name": { "bsonType": "string", "description": "Full name" },
+      "email": { "bsonType": "string", "pattern": "^.+@.+\\..+$", "description": "Unique login email" },
+      "passwordHash": { "bsonType": "string", "description": "BCrypt hashed password" },
+      "role": { "enum": ["STUDENT", "MENTOR"], "description": "Account type" },
+      "college": { "bsonType": "string", "description": "College name (students)" },
+      "interests": {
+        "bsonType": "array",
+        "items": { "bsonType": "string" },
+        "description": "Interest keywords e.g. DSA, ML, Web Dev"
+      },
+      "slackerFlag": { "bsonType": "bool", "description": "AI-set flag for low-engagement students" },
+      "flagCount": { "bsonType": "int", "minimum": 0 },
+      "createdAt": { "bsonType": "date" }
+    }
+  }
+}

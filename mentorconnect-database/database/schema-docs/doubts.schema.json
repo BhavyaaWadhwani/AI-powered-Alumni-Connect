@@ -1,0 +1,18 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "title": "doubts collection",
+    "required": ["studentId", "mentorId", "question", "status"],
+    "properties": {
+      "_id": { "bsonType": "objectId" },
+      "studentId": { "bsonType": "string", "description": "Reference to users._id" },
+      "studentName": { "bsonType": "string" },
+      "mentorId": { "bsonType": "string", "description": "Reference to mentors._id" },
+      "question": { "bsonType": "string" },
+      "answer": { "bsonType": "string" },
+      "status": { "enum": ["OPEN", "RESOLVED"] },
+      "isDuplicate": { "bsonType": "bool", "description": "AI-detected duplicate question" },
+      "createdAt": { "bsonType": "date" }
+    }
+  }
+}

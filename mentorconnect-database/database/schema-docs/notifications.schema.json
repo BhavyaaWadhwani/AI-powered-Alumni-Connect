@@ -1,0 +1,15 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "title": "notifications collection",
+    "required": ["recipientId", "type", "message"],
+    "properties": {
+      "_id": { "bsonType": "objectId" },
+      "recipientId": { "bsonType": "string", "description": "Reference to users._id" },
+      "type": { "enum": ["DOUBT", "RESUME", "CHAT", "SYSTEM"] },
+      "message": { "bsonType": "string" },
+      "read": { "bsonType": "bool" },
+      "timestamp": { "bsonType": "date" }
+    }
+  }
+}

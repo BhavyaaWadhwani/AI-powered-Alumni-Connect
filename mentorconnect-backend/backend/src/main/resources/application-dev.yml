@@ -1,0 +1,9 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/mentorconnect_dev
+
+logging:
+  level:
+    com.mentorconnect: DEBUG
+    org.springframework.web: DEBUG

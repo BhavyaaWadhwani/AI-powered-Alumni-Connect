@@ -1,0 +1,15 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "title": "ai_flags collection",
+    "required": ["userId", "flagType", "reason"],
+    "properties": {
+      "_id": { "bsonType": "objectId" },
+      "userId": { "bsonType": "string", "description": "Reference to users._id or mentors._id" },
+      "flagType": { "enum": ["SLACKER", "FRAUD"] },
+      "reason": { "bsonType": "string", "description": "Human-readable explanation" },
+      "confidenceScore": { "bsonType": "double", "minimum": 0, "maximum": 1 },
+      "createdAt": { "bsonType": "date" }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: mentorconnect
+
+  data:
+    mongodb:
+      uri: ${MONGODB_URI:mongodb://localhost:27017/mentorconnect}
+      database: mentorconnect
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY:your-api-key-here}
+      chat:
+        options:
+          model: gpt-4o-mini
+      embedding:
+        options:
+          model: text-embedding-3-small
+
+jwt:
+  secret: ${JWT_SECRET:mentorconnect-super-secret-key-change-in-production}
+  expiration-ms: 604800000   # 7 days
+
+cors:
+  allowed-origins: ${CORS_ORIGIN:http://localhost:3000}
+
+logging:
+  level:
+    com.mentorconnect: DEBUG
+    org.springframework.data.mongodb: INFO

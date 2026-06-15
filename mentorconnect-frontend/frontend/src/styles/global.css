@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', system-ui, sans-serif; }
+a { text-decoration: none; color: inherit; }
+button { font-family: inherit; }
+
+/* ── Dark theme (default) ── */
+:root, [data-theme="dark"] {
+  --mc-page-bg:      #111110;
+  --mc-surface:      #151513;
+  --mc-surface2:     #1a1a18;
+  --mc-nav-bg:       rgba(17,17,16,0.88);
+  --mc-alt-bg:       #0d0d0b;
+  --mc-border:       rgba(255,255,255,0.08);
+  --mc-border-st:    rgba(255,255,255,0.16);
+  --mc-border-grid:  rgba(255,255,255,0.06);
+  --mc-text:         #f0ede4;
+  --mc-text-sub:     #e8e6df;
+  --mc-text-muted:   #a8a69f;
+  --mc-text-faint:   #666460;
+  --mc-text-tiny:    #555452;
+  --mc-text-ghost:   #444240;
+  --mc-accent:       #5DCAA5;
+  --mc-accent-solid: #1D9E75;
+  --mc-accent-bg:    rgba(29,158,117,0.12);
+  --mc-accent-bdr:   rgba(29,158,117,0.3);
+  --mc-danger:       #F0997B;
+  --mc-danger-bg:    rgba(240,153,123,0.12);
+  --mc-amber:        #FAC775;
+  --mc-amber-bg:     rgba(250,199,117,0.12);
+  --mc-grid-line:    rgba(255,255,255,0.03);
+  --mc-orb:          rgba(29,158,117,0.12);
+  --mc-pill-bg:      rgba(255,255,255,0.06);
+  --mc-pill-text:    #888680;
+  --mc-input-bg:     #1a1a18;
+}
+
+/* ── Light theme ── */
+[data-theme="light"] {
+  --mc-page-bg:      #f8f7f3;
+  --mc-surface:      #ffffff;
+  --mc-surface2:     #f0ede8;
+  --mc-nav-bg:       rgba(248,247,243,0.88);
+  --mc-alt-bg:       #eeecea;
+  --mc-border:       rgba(0,0,0,0.08);
+  --mc-border-st:    rgba(0,0,0,0.16);
+  --mc-border-grid:  rgba(0,0,0,0.05);
+  --mc-text:         #1a1a18;
+  --mc-text-sub:     #2a2a28;
+  --mc-text-muted:   #555452;
+  --mc-text-faint:   #888680;
+  --mc-text-tiny:    #999794;
+  --mc-text-ghost:   #bbb9b2;
+  --mc-accent:       #0F6E56;
+  --mc-accent-solid: #1D9E75;
+  --mc-accent-bg:    rgba(29,158,117,0.10);
+  --mc-accent-bdr:   rgba(29,158,117,0.35);
+  --mc-danger:       #D85A30;
+  --mc-danger-bg:    rgba(216,90,48,0.10);
+  --mc-amber:        #B87010;
+  --mc-amber-bg:     rgba(184,112,16,0.10);
+  --mc-grid-line:    rgba(0,0,0,0.04);
+  --mc-orb:          rgba(29,158,117,0.10);
+  --mc-pill-bg:      rgba(0,0,0,0.05);
+  --mc-pill-text:    #666460;
+  --mc-input-bg:     #ffffff;
+}
+
+/* ── Keyframes ── */
+@keyframes mc-float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+@keyframes mc-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+@keyframes mc-fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes mc-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(128,128,120,0.25); border-radius: 4px; }
+
+/* ── Utility hover classes ── */
+.mc-hover-card:hover   { transform: translateY(-3px); }
+.mc-btn-primary:hover  { background: #18885f !important; }
+.mc-btn-ghost:hover    { background: rgba(128,128,120,0.1) !important; }
+.mc-nav-link:hover     { color: var(--mc-text) !important; }

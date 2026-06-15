@@ -1,0 +1,35 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "title": "mentors collection",
+    "required": ["name", "email", "company"],
+    "properties": {
+      "_id": { "bsonType": "objectId", "description": "Same as users._id" },
+      "name": { "bsonType": "string" },
+      "email": { "bsonType": "string" },
+      "company": { "bsonType": "string", "description": "e.g. Google, Microsoft" },
+      "role": { "bsonType": "string", "description": "Job title e.g. SWE, ML Engineer" },
+      "skills": {
+        "bsonType": "array",
+        "items": { "bsonType": "string" },
+        "description": "e.g. DSA, System Design, Java"
+      },
+      "achievements": {
+        "bsonType": "array",
+        "items": { "bsonType": "string" }
+      },
+      "popularityScore": {
+        "bsonType": "int",
+        "minimum": 0,
+        "maximum": 10000,
+        "description": "+10 per resolved doubt"
+      },
+      "resolvedDoubtCount": { "bsonType": "int", "minimum": 0 },
+      "fraudFlag": { "bsonType": "bool", "description": "AI-set flag for generic/copy-paste replies" },
+      "reviewList": {
+        "bsonType": "array",
+        "items": { "bsonType": "string" }
+      }
+    }
+  }
+}

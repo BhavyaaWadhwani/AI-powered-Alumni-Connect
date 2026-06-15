@@ -1,0 +1,17 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "title": "messages collection",
+    "required": ["senderId", "receiverId", "type", "timestamp"],
+    "properties": {
+      "_id": { "bsonType": "objectId" },
+      "senderId": { "bsonType": "string", "description": "Reference to users._id" },
+      "receiverId": { "bsonType": "string", "description": "Reference to users._id" },
+      "content": { "bsonType": "string" },
+      "fileUrl": { "bsonType": "string", "description": "GridFS file URL if type=FILE" },
+      "fileName": { "bsonType": "string" },
+      "type": { "enum": ["TEXT", "FILE"] },
+      "timestamp": { "bsonType": "date" }
+    }
+  }
+}

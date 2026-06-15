@@ -1,0 +1,23 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "title": "resumes collection",
+    "required": ["studentId", "mentorId", "fileUrl"],
+    "properties": {
+      "_id": { "bsonType": "objectId" },
+      "studentId": { "bsonType": "string", "description": "Reference to users._id" },
+      "studentName": { "bsonType": "string" },
+      "mentorId": { "bsonType": "string", "description": "Reference to mentors._id" },
+      "fileUrl": { "bsonType": "string", "description": "GridFS bucket URL" },
+      "score": { "bsonType": ["int", "null"], "minimum": 0, "maximum": 100 },
+      "weakPoints": {
+        "bsonType": "array",
+        "items": { "bsonType": "string" },
+        "description": "Highlighted in red on student UI"
+      },
+      "feedback": { "bsonType": "string" },
+      "uploadedAt": { "bsonType": "date" },
+      "gradedAt": { "bsonType": ["date", "null"] }
+    }
+  }
+}

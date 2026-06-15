@@ -1,0 +1,9 @@
+spring:
+  data:
+    mongodb:
+      uri: ${MONGODB_URI}   # Set in environment (MongoDB Atlas)
+
+logging:
+  level:
+    com.mentorconnect: INFO
+    org.springframework: WARN
